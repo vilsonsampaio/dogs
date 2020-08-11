@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import Input from '../Input';
+import Button from '../Button';
+
 import api from '../../services/api';
 
 const LoginForm = () => {
@@ -24,19 +27,21 @@ const LoginForm = () => {
       <h1>Login</h1>
 
       <form onSubmit={handleSubmit}>
-        <input 
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)} 
+        <Input 
+          label="Usuário" 
+          type="text" 
+          name="username"
+        />
+        
+        <Input 
+          label="Senha"
+          type="password" 
+          name="password"
         />
 
-        <input 
-          type="text"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)} 
-        />
-
-        <button type="submit">Entrar</button>
+        <Button>
+          Entrar  
+        </Button>        
       </form>
       
       <Link to="/login/sign-up">Cadastro</Link>
