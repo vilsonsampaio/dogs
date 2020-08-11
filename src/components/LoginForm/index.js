@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+
+import useForm from '../../hooks/useForm';
 
 import Input from '../Input';
 import Button from '../Button';
@@ -7,19 +9,18 @@ import Button from '../Button';
 import api from '../../services/api';
 
 const LoginForm = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const username = useForm();
+  const password = useForm();
+
 
   async function handleSubmit(e) {
     e.preventDefault();
+    
+    if (username.validate() && password.validate()) {
+      const fetchAPI = await api.post('jwt-auth/v1/token', {});
 
-    const fetchAPI = await api.post('jwt-auth/v1/token', {
-      username,
-      password
-    });
-
-    console.log(fetchAPI)
-
+      console.log(fetchAPI)
+    } 
   }
 
   return (
@@ -31,17 +32,17 @@ const LoginForm = () => {
           label="Usuário" 
           type="text" 
           name="username"
+          {...username}
         />
         
         <Input 
           label="Senha"
           type="password" 
           name="password"
+          {...password}
         />
 
-        <Button>
-          Entrar  
-        </Button>        
+        <Button>Entrar</Button>        
       </form>
       
       <Link to="/login/sign-up">Cadastro</Link>
