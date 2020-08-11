@@ -6,20 +6,46 @@ import useForm from '../../hooks/useForm';
 import Input from '../Input';
 import Button from '../Button';
 
-import api from '../../services/api';
+import { TOKEN_POST, USER_GET } from '../../services/api';
+import { useEffect } from 'react';
 
 const LoginForm = () => {
   const username = useForm();
   const password = useForm();
 
+  useEffect(() => {
+    const token = window.localStorage.getItem('DOGS_token');
+    
+    if (token) {
+      getUser(token);
+    }
+  }, []);
+
+  async function getUser(token) {
+    const { url, options } = USER_GET(token);
+    
+    const response = await fetch (url, options);
+    const json = await response.json();
+
+    console.log(json);
+  }
 
   async function handleSubmit(e) {
     e.preventDefault();
     
     if (username.validate() && password.validate()) {
-      const fetchAPI = await api.post('jwt-auth/v1/token', {});
+      const { url, options } = TOKEN_POST({
+        username: username.value,
+        password: password.value,
+      });
 
-      console.log(fetchAPI)
+      const response = await fetch(url, options);
+      const json = await response.json();
+      
+      console.log(json);
+
+      window.localStorage.setItem('DOGS_token', json.token);
+      getUser(json.token);
     } 
   }
 
