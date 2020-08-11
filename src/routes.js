@@ -7,15 +7,19 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Login from './pages/Login';
 
+import { UserStorage } from './UserContext';
+
 const routes = () => {
   return (
     <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login/*" element={<Login />} />
-      </Routes>
-      <Footer />
+      <UserStorage>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login/*" element={<Login />} />
+        </Routes>
+        <Footer />
+      </UserStorage>
     </BrowserRouter>   
   );
 }

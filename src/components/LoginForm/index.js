@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 import useForm from '../../hooks/useForm';
@@ -6,46 +6,19 @@ import useForm from '../../hooks/useForm';
 import Input from '../Input';
 import Button from '../Button';
 
-import { TOKEN_POST, USER_GET } from '../../services/api';
-import { useEffect } from 'react';
+import { UserContext } from '../../UserContext';
 
 const LoginForm = () => {
   const username = useForm();
   const password = useForm();
 
-  useEffect(() => {
-    const token = window.localStorage.getItem('DOGS_token');
-    
-    if (token) {
-      getUser(token);
-    }
-  }, []);
-
-  async function getUser(token) {
-    const { url, options } = USER_GET(token);
-    
-    const response = await fetch (url, options);
-    const json = await response.json();
-
-    console.log(json);
-  }
+  const { userLogin } = useContext(UserContext);
 
   async function handleSubmit(e) {
     e.preventDefault();
     
     if (username.validate() && password.validate()) {
-      const { url, options } = TOKEN_POST({
-        username: username.value,
-        password: password.value,
-      });
-
-      const response = await fetch(url, options);
-      const json = await response.json();
-      
-      console.log(json);
-
-      window.localStorage.setItem('DOGS_token', json.token);
-      getUser(json.token);
+      userLogin(username.value, password.value);
     } 
   }
 
