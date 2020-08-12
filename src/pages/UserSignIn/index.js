@@ -29,7 +29,7 @@ const UserSignIn = () => {
 
   return (
     <section className="animeLeft">
-      <h1 className="title">Login</h1>
+      <h1 className="title">Entrar</h1>
 
       <form className={styles.form} onSubmit={handleSubmit}>
         <Input 

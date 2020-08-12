@@ -13,7 +13,7 @@ export const UserStorage = ({ children }) => {
 
   const navigate = useNavigate();
 
-  const userLogout = React.useCallback(async function () {
+  const userLogout = React.useCallback(async () => {
     setData(null);
     setError(null);
     setLoading(false);
@@ -23,8 +23,6 @@ export const UserStorage = ({ children }) => {
 
     navigate('/user/sign-in');
   }, [navigate]);
-
-  
 
   async function getUser(token) {
     const { url, options } = USER_GET(token);
@@ -80,6 +78,8 @@ export const UserStorage = ({ children }) => {
         } finally {
           setLoading(false);
         }
+      } else {
+        setLogin(false);
       }
     }
 

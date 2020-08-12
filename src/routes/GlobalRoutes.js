@@ -3,13 +3,15 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { UserStorage } from '../UserContext';
 
-import UserRoutes from './UserRoutes';
+import ProtectedRoute from './ProtectedRoute';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 import Home from '../pages/Home';
+import MyAccount from '../pages/MyAccount';
 
+import UserRoutes from './UserRoutes';
 
 const GlobalRoutes = () => {
   return (
@@ -18,7 +20,8 @@ const GlobalRoutes = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/user/*" element={<UserRoutes />} />
+          <Route path="user/*" element={<UserRoutes />} />
+          <ProtectedRoute path="my-account/*" element={<MyAccount />} />
         </Routes>
         <Footer />
       </UserStorage>
