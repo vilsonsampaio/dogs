@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { default as Routes } from './routes';
+import GlobalRoutes from './routes/GlobalRoutes';
 
 import './App.css';
 
 const App = () => {
   return (
-    <Routes /> 
+    <GlobalRoutes /> 
   );
 }
 

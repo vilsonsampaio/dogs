@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 
 import useForm from '../../hooks/useForm';
 
-import Input from '../Input';
-import Button from '../Button';
+import Input from '../../components/Input';
+import Button from '../../components/Button';
 
 import { UserContext } from '../../UserContext';
 
-const LoginForm = () => {
+const UserSignIn = () => {
   const username = useForm();
   const password = useForm();
 
@@ -52,4 +52,4 @@ const LoginForm = () => {
   )
 }
 
-export default LoginForm;
+export default UserSignIn;
