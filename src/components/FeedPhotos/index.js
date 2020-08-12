@@ -10,7 +10,7 @@ import { PHOTOS_GET } from '../../services/api';
 
 import styles from './styles.module.css';
 
-const FeedPhotos = () => {
+const FeedPhotos = ({ setModalPhoto }) => {
   const { data, loading, error, request } = useFetch();
 
   React.useEffect(() => {
@@ -18,25 +18,27 @@ const FeedPhotos = () => {
       const { url, options } = PHOTOS_GET({ page: 1, total: 6, user: 0 });
 
       const { response, json } = await request(url, options);
-      console.log(json)
     }
 
     fetchPhotos();
   }, [request])
 
   if (error) return <Error error={error}/>
+  
   if (loading) return <Loading />
-  if (data)
-    return (
+  
+  if (data) return (
       <ul className={`${styles.feed} animeLeft`}>
         {data.map(photo => (
           <FeedPhotosItem 
             key={photo.id}
-            photo={photo} 
+            photo={photo}
+            setModalPhoto={setModalPhoto} 
           />
         ))}
       </ul>
     );
+  
   else return null;
 }
 
