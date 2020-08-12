@@ -1,11 +1,11 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import MyAccountHeader from '../components/MyAccountHeader';
-import Feed from '../components/Feed';
-import MyAccountPost from '../pages/MyAccountPost';
-import MyAccountStats from '../pages/MyAccountStats';
+import MyAccountHeader from '../components/MyAccount/MyAccountHeader';
 
+import Feed from '../pages/Feed';
+import MyAccountPost from '../pages/MyAccount/MyAccountPost';
+import MyAccountStats from '../pages/MyAccount/MyAccountStats';
 
 
 const MyAccountRoutes = () => {

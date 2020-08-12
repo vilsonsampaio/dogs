@@ -1,8 +1,7 @@
 import React from 'react';
 
-import FeedModal from '../FeedModal';
-import FeedPhotos from '../FeedPhotos';
-
+import FeedModal from '../../components/Feed/FeedModal';
+import FeedPhotos from '../../components/Feed/FeedPhotos';
 
 const Feed = () => {
   const [modalPhoto, setModalPhoto] = React.useState(null);

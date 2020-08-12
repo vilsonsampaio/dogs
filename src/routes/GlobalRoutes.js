@@ -3,13 +3,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { UserStorage } from '../UserContext';
 
-import ProtectedRoute from './ProtectedRoute';
-
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 import Home from '../pages/Home';
 
+import ProtectedRoute from './ProtectedRoute';
 import UserRoutes from './UserRoutes';
 import MyAccountRoutes from './MyAccountRoutes';
 

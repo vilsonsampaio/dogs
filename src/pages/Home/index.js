@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Feed from '../../components/Feed';
+import Feed from '../../pages/Feed';
 
 const Home = () => {
   return (

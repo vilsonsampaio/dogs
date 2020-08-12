@@ -1,14 +1,14 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
-import { UserContext } from '../../UserContext';
+import useMedia from '../../../hooks/useMedia';
 
-import useMedia from '../../hooks/useMedia';
+import { UserContext } from '../../../UserContext';
 
-import { ReactComponent as FeedIcon } from '../../assets/images/icons/feed.svg';
-import { ReactComponent as StatsIcon } from '../../assets/images/icons/estatisticas.svg';
-import { ReactComponent as PostIcon } from '../../assets/images/icons/adicionar.svg';
-import { ReactComponent as LogoutIcon } from '../../assets/images/icons/sair.svg';
+import { ReactComponent as FeedIcon } from '../../../assets/images/icons/feed.svg';
+import { ReactComponent as StatsIcon } from '../../../assets/images/icons/estatisticas.svg';
+import { ReactComponent as PostIcon } from '../../../assets/images/icons/adicionar.svg';
+import { ReactComponent as LogoutIcon } from '../../../assets/images/icons/sair.svg';
 
 import styles from './styles.module.css';
 

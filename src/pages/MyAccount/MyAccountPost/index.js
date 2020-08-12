@@ -1,14 +1,15 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import useForm from '../../hooks/useForm';
-import useFetch from '../../hooks/useFetch';
+import useForm from '../../../hooks/useForm';
+import useFetch from '../../../hooks/useFetch';
 
-import Input from '../../components/Input';
-import Button from '../../components/Button';
-import Error from '../../components/Error';
+import Error from '../../../components/Helper/Error';
 
-import { PHOTO_POST } from '../../services/api';
+import Input from '../../../components/Form/Input';
+import Button from '../../../components/Form/Button';
+
+import { PHOTO_POST } from '../../../services/api';
 
 import styles from './styles.module.css';
 

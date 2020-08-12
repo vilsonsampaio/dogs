@@ -1,12 +1,13 @@
 import React from 'react';
 
-import useFetch from '../../hooks/useFetch';
+import useFetch from '../../../hooks/useFetch';
+
+import Error from '../../Helper/Error';
+import Loading from '../../Helper/Loading';
 
 import FeedPhotosItem from '../FeedPhotosItem';
-import Error from '../Error';
-import Loading from '../Loading';
 
-import { PHOTOS_GET } from '../../services/api';
+import { PHOTOS_GET } from '../../../services/api';
 
 import styles from './styles.module.css';
 

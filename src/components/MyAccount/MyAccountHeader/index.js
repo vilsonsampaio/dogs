@@ -7,6 +7,7 @@ import styles from './styles.module.css';
 
 const MyAccountHeader = () => {
   const [title, setTitle] = React.useState('');
+  
   const location = useLocation();
 
   React.useEffect(() => {

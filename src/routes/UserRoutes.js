@@ -3,12 +3,13 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 
 import { UserContext } from '../UserContext';
 
-import UserSignIn from '../pages/UserSignIn';
-import UserSignUp from '../pages/UserSignUp';
-import UserPasswordForgot from '../pages/UserPasswordForgot';
-import UserPasswordReset from '../pages/UserPasswordReset';
+import UserSignIn from '../pages/User/UserSignIn';
+import UserSignUp from '../pages/User/UserSignUp';
+import UserPasswordForgot from '../pages/User/UserPasswordForgot';
+import UserPasswordReset from '../pages/User/UserPasswordReset';
 
 import styles from './UserRoutes.module.css';
+
 
 const UserRoutes = () => {
   const { login } = React.useContext(UserContext);
