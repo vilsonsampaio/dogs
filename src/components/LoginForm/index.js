@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import useForm from '../../hooks/useForm';
@@ -12,7 +12,7 @@ const LoginForm = () => {
   const username = useForm();
   const password = useForm();
 
-  const { userLogin } = useContext(UserContext);
+  const { userLogin, error, loading } = React.useContext(UserContext);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -40,11 +40,14 @@ const LoginForm = () => {
           name="password"
           {...password}
         />
-
-        <Button>Entrar</Button>        
+        {loading 
+          ? <Button disabled>Carregando...</Button>
+          : <Button>Entrar</Button>  
+        }
+        {error && <p>{error}</p>}      
       </form>
       
-      <Link to="/login/sign-up">Cadastro</Link>
+      <Link to="/user/sign-up">Cadastro</Link>
     </section>
   )
 }

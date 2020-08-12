@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { ReactComponent as Logo } from '../../assets/images/icons/dogs.svg';
@@ -8,7 +8,7 @@ import styles from './styles.module.css';
 import { UserContext } from '../../UserContext';
 
 const Header = () => {
-  const { data } = useContext(UserContext);
+  const { userLogout, data } = React.useContext(UserContext);
 
   return (
     <header className={styles.header}>
@@ -22,12 +22,13 @@ const Header = () => {
         </Link>
         {data 
           ? (
-            <Link to="/conta" className={styles.login}>
+            <Link to="/my-account" className={styles.login}>
               {data.nome}
+              <button onClick={userLogout}>Sair</button>
             </Link>
           )
           : (
-            <Link to="/login" className={styles.login}>
+            <Link to="/user/sign-in" className={styles.login}>
               Login / Criar
             </Link>
           )

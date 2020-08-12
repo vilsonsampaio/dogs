@@ -16,7 +16,7 @@ const routes = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login/*" element={<Login />} />
+          <Route path="/user/*" element={<Login />} />
         </Routes>
         <Footer />
       </UserStorage>
