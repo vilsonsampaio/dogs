@@ -44,10 +44,12 @@ button, input {
   font-size: 1rem;
 }
 
-a {
+a, button {
   color: #333;
 
   text-decoration: none;
+  
+  cursor: pointer;
 }
 
 .container {

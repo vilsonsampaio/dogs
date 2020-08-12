@@ -9,9 +9,9 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 import Home from '../pages/Home';
-import MyAccount from '../pages/MyAccount';
 
 import UserRoutes from './UserRoutes';
+import MyAccountRoutes from './MyAccountRoutes';
 
 const GlobalRoutes = () => {
   return (
@@ -21,7 +21,7 @@ const GlobalRoutes = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="user/*" element={<UserRoutes />} />
-          <ProtectedRoute path="my-account/*" element={<MyAccount />} />
+          <ProtectedRoute path="my-account/*" element={<MyAccountRoutes />} />
         </Routes>
         <Footer />
       </UserStorage>
