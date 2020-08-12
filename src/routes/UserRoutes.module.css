@@ -1,0 +1,36 @@
+.userRoutes {
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.userRoutes::before {
+  content: '';
+
+  display: block;
+  
+  background: url('../assets/images/login.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.forms {
+  max-width: 30rem;
+
+  padding: 1rem;
+}
+
+@media (max-width: 40rem) {
+  .userRoutes {
+    grid-template-columns: 1fr;
+  }
+
+  .userRoutes::before {
+    display: none;
+  }
+
+  .forms {
+    max-width: 100%;
+  }
+}
