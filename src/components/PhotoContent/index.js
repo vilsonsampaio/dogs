@@ -7,7 +7,6 @@ import styles from './styles.module.css';
 
 const PhotoContent = ({ data }) => {
   const { photo, comments } = data;
-  console.log(data)
 
   return (
     <div className={styles.photo}>
@@ -16,11 +15,9 @@ const PhotoContent = ({ data }) => {
       </div>
       <div className={styles.details}>
         <div>
-          <p>
-            <Link to={`/user/${photo.author}`}>
-              @{photo.author}
-            </Link>
-            <span style={styles.views}>{photo.acessos}</span>
+          <p className={styles.author}>
+            <Link to={`/user/${photo.author}`}>@{photo.author}</Link>
+            <span className={styles.views}>{photo.acessos}</span>
           </p>
           <h1 className="title">
             <Link to={`/photo/${photo.id}`}>{photo.title}</Link>
