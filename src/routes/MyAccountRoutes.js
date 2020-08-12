@@ -3,8 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 
 import MyAccountHeader from '../components/MyAccountHeader';
 import Feed from '../components/Feed';
-import MyAccountPost from '../components/MyAccountPost';
-import MyAccountStats from '../components/MyAccountStats';
+import MyAccountPost from '../pages/MyAccountPost';
+import MyAccountStats from '../pages/MyAccountStats';
 
 
 

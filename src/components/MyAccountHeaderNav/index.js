@@ -16,7 +16,6 @@ const MyAccountHeaderNav = () => {
   const { userLogout } = React.useContext(UserContext);
 
   const mobile = useMedia('(max-width: 40rem)');
-  console.log(mobile);
 
   const [mobileMenu, setMobileMenu] = React.useState(false);
 
@@ -24,7 +23,8 @@ const MyAccountHeaderNav = () => {
 
   React.useEffect(() => {
     setMobileMenu(false);
-  }, [pathname])
+  }, [pathname]);
+
   return (
     <>
       {mobile && (
