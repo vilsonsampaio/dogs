@@ -8,7 +8,6 @@ import styles from './styles.module.css';
 const MyAccountHeader = () => {
   const [title, setTitle] = React.useState('');
   const location = useLocation();
-  console.log(location.pathname.split('/')[2]);
 
   React.useEffect(() => {
     const pathName = location.pathname.split('/')[2];
