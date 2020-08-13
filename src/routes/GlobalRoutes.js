@@ -7,10 +7,12 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 import Home from '../pages/Home';
+import Photo from '../pages/Photo';
 
 import ProtectedRoute from './ProtectedRoute';
 import UserRoutes from './UserRoutes';
 import MyAccountRoutes from './MyAccountRoutes';
+
 
 const GlobalRoutes = () => {
   return (
@@ -21,6 +23,7 @@ const GlobalRoutes = () => {
           <Route path="/" element={<Home />} />
           <Route path="user/*" element={<UserRoutes />} />
           <ProtectedRoute path="my-account/*" element={<MyAccountRoutes />} />
+          <Route path="/photo/:id" element={<Photo />} />
         </Routes>
         <Footer />
       </UserStorage>

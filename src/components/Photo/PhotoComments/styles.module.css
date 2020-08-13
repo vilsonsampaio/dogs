@@ -5,6 +5,10 @@
   word-break: break-word;
 }
 
+.photoSingle.comments {
+  padding: 0;
+}
+
 .comments li {
   margin-bottom: 0.5rem;
 

@@ -18,6 +18,13 @@
   animation: scaleUp 0.3s forwards;
 }
 
+
+.photoSingle.photo {
+  height: auto;
+
+  grid-template-columns: 1fr;
+}
+
 @keyframes scaleUp {
   to {
     opacity: initial;
@@ -29,8 +36,20 @@
   grid-row: 1 / 4;
 }
 
+.photoSingle .img {
+  grid-row: 1;
+
+  border-radius: 0.4rem;
+
+  overflow: hidden;
+}
+
 .details {
   padding: 2rem 2rem 0;
+}
+
+.photoSingle .details {
+  padding: 1rem 0 0;
 }
 
 .author {
@@ -88,10 +107,6 @@
   margin-right: 0.5rem;
 
   background: #333;
-}
-
-.comments {
-  padding: 0 2rem;
 }
 
 @media (max-width: 64rem) {
