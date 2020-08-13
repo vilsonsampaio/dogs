@@ -15,7 +15,6 @@ const PhotoContent = ({ data, single }) => {
   const user = React.useContext(UserContext);
 
   const { photo, comments } = data;
-  console.log(user.data && user.data.username === photo.author);
 
   return (
     <div className={`
