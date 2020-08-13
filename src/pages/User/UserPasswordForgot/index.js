@@ -3,6 +3,7 @@ import React from 'react';
 import useForm from '../../../hooks/useForm';
 import useFetch from '../../../hooks/useFetch';
 
+import Head from '../../../components/Helper/Head';
 import Error from '../../../components/Helper/Error';
 
 import Input from '../../../components/Form/Input';
@@ -34,8 +35,10 @@ const UserPasswordForgot = () => {
   }
 
   return (
-    <section>
-      <h1 className="title">Perdeu a senha?</h1>
+    <section className="animeLeft">
+      <Head title="Esqueci a senha" />
+
+      <h1 className="title">Esqueceu a senha?</h1>
 
       {data 
         ? (

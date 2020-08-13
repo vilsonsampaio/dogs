@@ -5,6 +5,7 @@ import useForm from '../../../hooks/useForm';
 
 import { UserContext } from '../../../UserContext';
 
+import Head from '../../../components/Helper/Head';
 import Error from '../../../components/Helper/Error';
 
 import Input from '../../../components/Form/Input';
@@ -30,6 +31,8 @@ const UserSignIn = () => {
 
   return (
     <section className="animeLeft">
+      <Head title="Entrar" />
+      
       <h1 className="title">Entrar</h1>
 
       <form className={styles.form} onSubmit={handleSubmit}>

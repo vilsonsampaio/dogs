@@ -5,6 +5,7 @@ import useFetch from '../../../hooks/useFetch';
 
 import { UserContext } from '../../../UserContext';
 
+import Head from '../../../components/Helper/Head';
 import Error from '../../../components/Helper/Error';
 
 import Input from '../../../components/Form/Input';
@@ -36,6 +37,7 @@ const UserSignUp = () => {
 
   return (
     <section className="animeLeft">
+      <Head title="Cadastro" />
       <h1 className="title">Cadastre-se</h1>
 
       <form onSubmit={handleSubmit}>
