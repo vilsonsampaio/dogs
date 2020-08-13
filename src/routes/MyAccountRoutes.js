@@ -1,19 +1,23 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
+import { UserContext } from '../UserContext';
+
+import Feed from '../components/Feed';
 import MyAccountHeader from '../components/MyAccount/MyAccountHeader';
 
-import Feed from '../pages/Feed';
 import MyAccountPost from '../pages/MyAccount/MyAccountPost';
 import MyAccountStats from '../pages/MyAccount/MyAccountStats';
 
 
 const MyAccountRoutes = () => {
+  const { data } = React.useContext(UserContext);
+
   return (
     <section className="container">
       <MyAccountHeader />
       <Routes>
-        <Route path="/" element={<Feed />} />
+        <Route path="/" element={<Feed user={data.id} />} />
         <Route path="post" element={<MyAccountPost />} />
         <Route path="stats" element={<MyAccountStats />} />
       </Routes>
