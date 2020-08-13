@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const useFetch = () => {
   const [data, setData] = React.useState(null);
@@ -29,7 +29,7 @@ const useFetch = () => {
         json,
       });
     }
-  }, [])
+  }, []);
 
   return ({
     data,
@@ -39,4 +39,4 @@ const useFetch = () => {
   });
 }
 
-export default useFetch
+export default useFetch;
