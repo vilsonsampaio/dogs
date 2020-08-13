@@ -11,13 +11,21 @@ const PhotoComments = (props) => {
   
   const [comments, setComments] = React.useState([]);
 
+  const commentsSection = React.useRef(null);
+
   React.useEffect(() => {
     setComments(props.comments);
   }, [props.comments])
 
+  React.useEffect(() => {
+    const { scrollHeight } = commentsSection.current;
+
+    commentsSection.current.scrollTop = scrollHeight;
+  }, [comments]);
+
   return (
     <>
-      <ul className={styles.comments}>
+      <ul ref={commentsSection} className={styles.comments}>
         {comments.map(comment => (
           <li key={comment._ID}>
             <b>{comment.comment_author}: </b>

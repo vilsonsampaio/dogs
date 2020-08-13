@@ -8,6 +8,9 @@ import { ReactComponent as SendCommentIcon } from '../../../assets/images/icons/
 
 import { COMMENT_POST } from '../../../services/api';
 
+import styles from './styles.module.css';
+
+
 const PhotoCommentsForm = ({ id, setComments }) => {
   const [comment, setComment] = React.useState('');
   
@@ -33,8 +36,9 @@ const PhotoCommentsForm = ({ id, setComments }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       <textarea 
+        className={styles.textarea}
         id="comment"
         name="comment"
         placeholder="Comente...."
@@ -42,7 +46,7 @@ const PhotoCommentsForm = ({ id, setComments }) => {
         onChange={(e) => setComment(e.target.value)} 
       />
 
-      <button>
+      <button className={styles.button}>
         <SendCommentIcon />
       </button>
 
