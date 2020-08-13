@@ -8,6 +8,7 @@ import MyAccountHeader from '../components/MyAccount/MyAccountHeader';
 
 import MyAccountPost from '../pages/MyAccount/MyAccountPost';
 import MyAccountStats from '../pages/MyAccount/MyAccountStats';
+import NotFound from '../pages/NotFound';
 
 
 const MyAccountRoutes = () => {
@@ -20,6 +21,8 @@ const MyAccountRoutes = () => {
         <Route path="/" element={<Feed user={data.id} />} />
         <Route path="post" element={<MyAccountPost />} />
         <Route path="stats" element={<MyAccountStats />} />
+
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </section>
   );
