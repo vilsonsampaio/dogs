@@ -15,6 +15,7 @@ const PhotoContent = ({ data, single }) => {
   const user = React.useContext(UserContext);
 
   const { photo, comments } = data;
+  console.log(user.data && user.data.username === photo.author);
 
   return (
     <div className={`
@@ -30,7 +31,7 @@ const PhotoContent = ({ data, single }) => {
             {
               (user.data && user.data.username === photo.author)
                 ? <PhotoDelete id={photo.id} />
-                : <Link to={`/user/${photo.author}`}>@{photo.author}</Link>
+                : <Link to={`/profile/${photo.author}`}>@{photo.author}</Link>
             }
             <span className={styles.views}>{photo.acessos}</span>
           </p>

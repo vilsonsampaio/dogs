@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 
 import Home from '../pages/Home';
 import Photo from '../pages/Photo';
+import Profile from '../pages/Profile';
 
 import ProtectedRoute from './ProtectedRoute';
 import UserRoutes from './UserRoutes';
@@ -24,6 +25,7 @@ const GlobalRoutes = () => {
           <Route path="user/*" element={<UserRoutes />} />
           <ProtectedRoute path="my-account/*" element={<MyAccountRoutes />} />
           <Route path="/photo/:id" element={<Photo />} />
+          <Route path="/profile/:user" element={<Profile />} />
         </Routes>
         <Footer />
       </UserStorage>
