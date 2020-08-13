@@ -27,7 +27,7 @@ const MyAccountPost = () => {
     if (data) navigate('/my-account');
   }, [data, navigate])
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     const formData = new FormData();
@@ -40,7 +40,8 @@ const MyAccountPost = () => {
 
     if (token) {
       const { url, options } = PHOTO_POST(formData, token);
-      request(url, options);
+      
+      await request(url, options);
     }
   }
 
