@@ -18,23 +18,29 @@ import MyAccountRoutes from './MyAccountRoutes';
 
 const GlobalRoutes = () => {
   return (
-    <BrowserRouter>
-      <UserStorage>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
+    <div className="App">
+      <BrowserRouter>
+        <UserStorage>
+          <Header />
 
-          <Route path="user/*" element={<UserRoutes />} />
-          <ProtectedRoute path="my-account/*" element={<MyAccountRoutes />} />
+          <main className="AppBody">
+            <Routes>
+              <Route path="/" element={<Home />} />
 
-          <Route path="/photo/:id" element={<Photo />} />
-          <Route path="/profile/:user" element={<Profile />} />
+              <Route path="user/*" element={<UserRoutes />} />
+              <ProtectedRoute path="my-account/*" element={<MyAccountRoutes />} />
+
+              <Route path="/photo/:id" element={<Photo />} />
+              <Route path="/profile/:user" element={<Profile />} />
+              
+              <Route path="*" element={<NotFound />} />
+            </Routes>            
+          </main>
           
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Footer />
-      </UserStorage>
-    </BrowserRouter>   
+          <Footer />
+        </UserStorage>
+      </BrowserRouter>
+    </div>   
   );
 }
 
