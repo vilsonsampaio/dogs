@@ -5,10 +5,12 @@
 .img {  
   max-width: 100%;
   
-  display: block;
   grid-area: 1 / 1;
+  
+  display: block;
 
   opacity: 0;
+
   transition: 0.2s;
 }
 
