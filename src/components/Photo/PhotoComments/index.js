@@ -27,7 +27,7 @@ const PhotoComments = (props) => {
     <>
       <ul ref={commentsSection} className={styles.comments}>
         {comments.map(comment => (
-          <li key={comment._ID}>
+          <li key={comment.comment_ID}>
             <b>{comment.comment_author}: </b>
             <span>{comment.comment_content}</span>
           </li>
