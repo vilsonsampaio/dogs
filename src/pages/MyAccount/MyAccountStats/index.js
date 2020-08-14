@@ -6,10 +6,12 @@ import Head from '../../../components/Helper/Head';
 import Loading from '../../../components/Helper/Loading';
 import Error from '../../../components/Helper/Error';
 
-import MyAccountStatsGraphs from '../../../components/MyAccount/MyAccountStatsGraphs';
-
-
 import { STATS_GET } from '../../../services/api';
+
+const MyAccountStatsGraphs = React.lazy(
+  () => import('../../../components/MyAccount/MyAccountStatsGraphs')
+);
+
 
 const MyAccountStatics = () => {
   const { request, data, loading, error } = useFetch();
@@ -34,11 +36,11 @@ const MyAccountStatics = () => {
 
   if (data) 
     return (
-      <div>
+      <React.Suspense fallback={<Loading />}>
         <Head title="Estatísticas" />
 
         <MyAccountStatsGraphs data={data} />
-      </div>
+      </React.Suspense>
     );
   else return null; 
 }

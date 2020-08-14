@@ -6,7 +6,7 @@ import styles from './styles.module.css';
 const MyAccountStatsGraphs = ({ data }) => {
   const [graph, setGraph] = React.useState([]);
   const [total, setTotal] = React.useState(0);
-  console.log(data)
+
   React.useEffect(() => {
     const accessArray = data.map(data => Number(data.acessos));
     const accessSum = accessArray.reduce((acc, cur) => acc + cur);
