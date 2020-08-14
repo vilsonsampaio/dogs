@@ -53,7 +53,7 @@ const UserSignIn = () => {
           ? <Button disabled>Carregando...</Button>
           : <Button>Entrar</Button>  
         }
-        <Error error={error}/>
+        <Error error={error && 'Usuário ou senha inválido(s)!'}/>
       </form>
       
       <Link className={styles.forgotPassword} to="/user/forgot-password">Esqueci minha senha</Link>
