@@ -43,7 +43,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Victory](https://formidable.com/open-source/victory/docs)
 
 ## 🌐 Projeto final
-[Clique aqui](https://vilsonsampaio-dogs.netlify.app/) para acessar o projeto no ar!
+[Clique aqui](https://dogs.vilsonsampaio.dev/) para acessar o projeto no ar!
 
 
 ---
